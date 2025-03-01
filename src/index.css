@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* @plugin "tailwindcss-animate"; */
-
+/* 
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -187,4 +187,4 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
