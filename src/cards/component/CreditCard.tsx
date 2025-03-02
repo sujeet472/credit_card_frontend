@@ -1,5 +1,5 @@
 
-import { useState, ChangeEvent, FocusEvent } from 'react';
+import { useState} from 'react';
 import Cards from 'react-credit-cards-2';
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
 
@@ -13,7 +13,7 @@ interface CardState {
   focus: Focused; // Use Focused type
 }
 
-const PaymentForm: React.FC = () => {
+const CreditCard: React.FC = () => {
   const [state, setState] = useState<CardState>({
     number: '67463',
     expiry: '',
@@ -79,4 +79,4 @@ const PaymentForm: React.FC = () => {
   );
 };
 
-export default PaymentForm;
+export default CreditCard;

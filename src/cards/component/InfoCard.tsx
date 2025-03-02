@@ -11,14 +11,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+// import { Input } from "@/components/ui/input";
 
 export default function InfoCard(props: any) {
   const [showData, setShowData] = useState( false );
 
   return (
     <motion.div 
-      className="flex items-center justify-center min-h-screen bg-gray-100 p-6"
+      className="flex items-center justify-center min-h-screen  p-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
