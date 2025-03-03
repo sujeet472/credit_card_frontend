@@ -45,7 +45,7 @@ export default function UserCardsTable() {
         fetchData();
     }, []);
 
-    // ✅ Log when data updates
+    
     useEffect(() => {
         console.log("Updated data:", data);
     }, [data]);

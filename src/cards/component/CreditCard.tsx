@@ -18,7 +18,7 @@ const CreditCard: React.FC = () => {
     number: '67463',
     expiry: '',
     cvc: '',
-    name: '',
+    name: 'Aman',
     focus: '', // Use an empty string as an initial value
   });
 
