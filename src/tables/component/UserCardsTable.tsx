@@ -1,51 +1,68 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-const API_url = "http://localhost:3000/api/v1/user_cards/UC001";
-function getApiData() {
-    return axios.get(API_url).then((response) => response.data);
-}
-
-interface User_card_data {
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "@/components/ui/table";
+  
+  interface UserCardData {
     card_id: string;
+    credit_card_id: string;
     profile_id: string;
-    issue_date: Date;
-    expiry_date: Date;
+    issue_date: string;  // Changed to string for display
+    expiry_date: string;  // Changed to string for display
     available_limit: number;
-    is_active: boolean;
-}
-
-export default function UserCardsTable() {
-    const [data, setData] = useState<User_card_data>({
-        card_id: "xx",
-        profile_id: "yy",
-        issue_date: new Date(),
-        expiry_date: new Date(),
-        available_limit: 0,
-        is_active: false,
-    });
-
-    useEffect(() => {
-        async function fetchData() {
-            const data1 = await getApiData();
-            const formattedData: User_card_data = {
-                card_id: data1.id,
-                profile_id: data1.profile_id,
-                issue_date: new Date(data1.issue_date),
-                expiry_date: new Date(data1.expiry_date),
-                available_limit: Number(data1.available_limit),
-                is_active: data1.is_active,
-            };
-            setData(formattedData);
-        }
-
-        fetchData();
-    }, []);
-
-    // ✅ Log when data updates
-    useEffect(() => {
-        console.log("Updated data:", data);
-    }, [data]);
-
-    return <></>;
-}
+  }
+  
+  const sampleUserCards: UserCardData[] = [
+    {
+      card_id: "UC001",
+      credit_card_id: "CC001",
+      profile_id: "P001",
+      issue_date: "2025-03-01",
+      expiry_date: "2028-03-01",
+      available_limit: 5000,
+    },
+    {
+      card_id: "UC002",
+      credit_card_id: "CC002",
+      profile_id: "P002",
+      issue_date: "2025-04-10",
+      expiry_date: "2028-04-10",
+      available_limit: 3000,
+    },
+  ];
+  
+  export default function UserCardsTable() {
+    return (
+      <Table>
+        <TableCaption>A list of your user cards.</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">User Card ID</TableHead>
+            <TableHead>Credit Card ID</TableHead>
+            <TableHead>Profile ID</TableHead>
+            <TableHead>Issue Date</TableHead>
+            <TableHead>Expiry Date</TableHead>
+            <TableHead className="text-right">Available Amount</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {sampleUserCards.map((card) => (
+            <TableRow key={card.card_id}>
+              <TableCell className="font-medium">{card.card_id}</TableCell>
+              <TableCell>{card.credit_card_id}</TableCell>
+              <TableCell>{card.profile_id}</TableCell>
+              <TableCell>{card.issue_date}</TableCell>
+              <TableCell>{card.expiry_date}</TableCell>
+              <TableCell className="text-right">${card.available_limit}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    );
+  }
+  

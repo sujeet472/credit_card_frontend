@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import { Route } from 'lucide-react'
 import './App.css'
+import Layout from './sidebar/component/LeftSideBar'
+import { Routes } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
+import { BreadcrumbWithCustomSeparator } from './breadcrumb/component/BreadcrumbWithCustomSeparator'
+import InfoCard from './cards/component/InfoCard'
+import CreditCard from './cards/component/CreditCard'
+import UserCardsTable from './tables/component/UserCardsTable'
+// "use client";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Layout>
+      <div className='ml-9'>
+      <BreadcrumbWithCustomSeparator />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+     
+      <div className="flex flex-wrap items-center justify-between gap-4 p-6">
+        <InfoCard data="Balance" className="flex-1 min-w-[250px]" />
+        <InfoCard data="Transaction" className="flex-1 min-w-[250px]" />
+        <div className="flex-1 flex justify-center">
+          <CreditCard />
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      
+      <div className="p-6 bg-gray-50 rounded-lg shadow">
+        <UserCardsTable />
+      </div>
+    </Layout>
+  );
 }
+
+
+
+
 
 export default App

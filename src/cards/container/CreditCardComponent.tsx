@@ -6,7 +6,7 @@ export default function CreditCardComponent() {
         <>
 
 
-            <div className='flex item-center justify-center items-center bg-gray-200 w-screen '>
+            <div className='flex item-center justify-center items-center bg-gray-200 w-full h-full '>
                 <InfoCard data={"Get my expenses"} />
                 <InfoCard data={"Number of Transactions"} />
                 <CreditCard />
