@@ -1,7 +1,8 @@
-import { BreadcrumbWithCustomSeparator } from "@/breadcrumb/component/BreadcrumbWithCustomSeparator";
+// import { BreadcrumbWithCustomSeparator } from "@/breadcrumb/component/BreadcrumbWithCustomSeparator";
 import CreditCard from "@/cards/component/CreditCard";
 import InfoCard from "@/cards/component/InfoCard";
-import UserCardsTable from "@/tables/component/UserCardsTable";
+import UserAccountTransaction from "@/tables/component/ShowUserAccountTransaction";
+// import UserCardsTable from "@/tables/component/UserCardsTable";
 
 
 const Dashboard: React.FC = () => {
@@ -22,7 +23,9 @@ const Dashboard: React.FC = () => {
 
 
             <div className="p-6 bg-gray-50 rounded-lg shadow">
-                <UserCardsTable />
+                {/* <UserCardsTable /> */}
+                <UserAccountTransaction userAccountTransactionId="T001">
+                </UserAccountTransaction>
             </div>
         </>
     );
