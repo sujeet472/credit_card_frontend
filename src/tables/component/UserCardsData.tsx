@@ -11,7 +11,7 @@ interface User_card_data {
     credit_card_id: string,
     profile_id: string;
     issue_date: Date;
-    expiry_date: Date;
+    expiry_date: Date;  
     available_limit: number;
     is_active: boolean;
 }

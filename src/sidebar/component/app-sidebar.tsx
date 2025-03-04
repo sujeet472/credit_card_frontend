@@ -1,18 +1,21 @@
 
 
-import { ChevronDown, CreditCard, FileText, Send, Users, Languages, Moon, Key, Image } from "lucide-react"
+import { ChevronDown, CreditCard, FileText, Send, Users, Languages, Moon, Key, Image, ChevronUp, User2 } from "lucide-react"
 
 import {
     Sidebar,
     SidebarContent,
+    SidebarFooter,
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
     SidebarMenu,
+    SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible"
 import { SidebarMenuSub, SidebarMenuSubItem } from "@/components/ui/sidebar"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 // Menu structure
 const menuItems = [
@@ -38,6 +41,11 @@ const menuItems = [
         ],
     },
 ]
+
+const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/login"; // Redirect to login page
+};
 
 export function AppSidebar() {
     return (
@@ -75,7 +83,36 @@ export function AppSidebar() {
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
+
             </SidebarContent>
+            <SidebarFooter>
+                    <SidebarMenu>
+                        <SidebarMenuItem>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <SidebarMenuButton>
+                                        <User2 /> Username
+                                        <ChevronUp className="ml-auto" />
+                                    </SidebarMenuButton>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent
+                                    side="top"
+                                    className="w-[--radix-popper-anchor-width]"
+                                >
+                                    <DropdownMenuItem>
+                                        <span>Account</span>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        <span>Billing</span>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        <span onClick={handleLogout}>Sign out</span>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </SidebarMenuItem>
+                    </SidebarMenu>
+                </SidebarFooter>
         </Sidebar>
     )
 }

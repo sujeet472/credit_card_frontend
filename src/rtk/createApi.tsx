@@ -15,21 +15,37 @@ export const account_transactions_Api = createApi({
     fetchAccountTransaction: builder.query({
       query: (id) => `account_transactions/${id}`,
     }),
+
+    // createAccountTransaction: builder.mutation({
+    //   query: (account_transactions) => ({
+    //     url: "account_transaction",
+    //     method: "POST",
+    //     body: account_transactions,
+    //   }),
+    // }),
+
     createAccountTransaction: builder.mutation({
-      query: (account_transactions) => ({
-        url: "account_transaction",
+      query: (account_transaction_data) => ({
+        url: "frontend_account_transactions",
         method: "POST",
-        body: account_transactions,
+        body: account_transaction_data,
       }),
     }),
+
+
     fetchUserCards: builder.query<void, void>({
       query: () => 'frontend_user_cards',
+    }),
+
+    fetchAccountTransactions: builder.query<void, void>({
+      query: () => `frontend_account_transactions`,
     }),
   }),
 });
 
-export const { 
-  useFetchAccountTransactionQuery, 
+export const {
+  useFetchAccountTransactionQuery,
+  useFetchAccountTransactionsQuery,
   useCreateAccountTransactionMutation,
   useFetchUserCardsQuery,
 } = account_transactions_Api;
