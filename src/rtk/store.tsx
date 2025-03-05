@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { account_transactions_Api } from "./createApi";
 import authReducer from "./authSlice"; // Import authSlice
+import profileReducer from "@/rtk/profileSlice"; 
 
 export const store = configureStore({
   reducer: {
     [account_transactions_Api.reducerPath]: account_transactions_Api.reducer,
     auth: authReducer, // Add the auth reducer
+    profile: profileReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(account_transactions_Api.middleware),
@@ -14,7 +16,8 @@ export const store = configureStore({
 
 setupListeners(store.dispatch);
 
-
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 
 

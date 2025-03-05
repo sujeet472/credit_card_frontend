@@ -47,11 +47,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="p-4 flex w-full justify-between items-center">
             <SidebarTrigger />
             <TopNavbar />
-            
+
           </div>
-          <div className='ml-9'>
-                <BreadcrumbWithCustomSeparator />
-            </div>
+          {/* <div className='ml-9'>
+            <BreadcrumbWithCustomSeparator />
+          </div> */}
         </main>
         <div className="w-full">
 

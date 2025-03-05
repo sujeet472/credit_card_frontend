@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-
 import Layout from "@/sidebar/component/Layout";
 import Dashboard from "@/deshboard/Dashboard";
-import UserCardsTable from "@/tables/component/UserCardsTable";
 import Login from "../login/component/login"; // Ensure you have a Login component
+import NewUserCardTable from "@/tables/component/NewUserCardTable";
+import NewCreateAccountTransactionForm from "@/tables/component/NewCreateAccountTransaction";
+import ProfilePage from "@/profile/component/ProfilePage";
+import ProfileUpdate from "@/profile/component/ProfileUpdate";
 
 // Function to check if user is authenticated
 const isAuthenticated = (): boolean => {
@@ -51,7 +52,40 @@ const AppRoutes: React.FC = () => {
           element={
             <ProtectedRoute>
               <Layout>
-                <UserCardsTable />
+                <NewUserCardTable />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/newTransaction"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <NewCreateAccountTransactionForm />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <ProfilePage/>
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profileUpdate"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <ProfileUpdate/>
               </Layout>
             </ProtectedRoute>
           }

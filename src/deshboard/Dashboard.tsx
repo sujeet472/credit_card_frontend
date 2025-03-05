@@ -1,10 +1,10 @@
 // import { BreadcrumbWithCustomSeparator } from "@/breadcrumb/component/BreadcrumbWithCustomSeparator";
 import CreditCard from "@/cards/component/CreditCard";
 import InfoCard from "@/cards/component/InfoCard";
-import NewCreateAccountTransactionForm from "@/tables/component/NewCreateAccountTransaction";
+// import NewCreateAccountTransactionForm from "@/tables/component/NewCreateAccountTransaction";
 import NewUserAccountTransactions from "@/tables/component/NewUserAccountTransactions";
-import NewUserCardData from "@/tables/component/NewUserCardTable";
-import ShowUserAccountTransaction from "@/tables/component/ShowUserAccountTransaction";
+// import NewUserCardData from "@/tables/component/NewUserCardTable";
+// import ShowUserAccountTransaction from "@/tables/component/ShowUserAccountTransaction";
 // import UserCardsTable from "@/tables/component/UserCardsTable";
 
 
@@ -31,7 +31,7 @@ const Dashboard: React.FC = () => {
                 {/* </ShowUserAccountTransaction> */}
                 {/* <NewUserCardData/>  */}
                 <NewUserAccountTransactions/>
-                <NewCreateAccountTransactionForm/>
+                {/* <NewCreateAccountTransactionForm/> */}
 
             </div>
         </>

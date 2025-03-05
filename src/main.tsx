@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";  // Import BrowserRouter
+
 import App from "./App";
 import "./index.css";
-// import LoginPage from "./login/component/login";
+
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
 
   <React.StrictMode>
     <App />
-    {/* <LoginPage/> */}
   </React.StrictMode>
 );
 
