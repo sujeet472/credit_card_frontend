@@ -7,7 +7,7 @@ interface UserCardData {
   profile_id: string;
   issue_date: string;
   expiry_date: string;
-  available_limit: string; // API returns it as string
+  available_limit: string; 
   hashed_cvv: string;
   is_active: boolean;
 }

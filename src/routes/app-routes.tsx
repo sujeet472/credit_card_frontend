@@ -6,6 +6,8 @@ import NewUserCardTable from "@/tables/component/NewUserCardTable";
 import NewCreateAccountTransactionForm from "@/tables/component/NewCreateAccountTransaction";
 import ProfilePage from "@/profile/component/ProfilePage";
 import ProfileUpdate from "@/profile/component/ProfileUpdate";
+import LandingPage from "@/landingPage/component/LandingPage";
+
 
 // Function to check if user is authenticated
 const isAuthenticated = (): boolean => {
@@ -14,7 +16,7 @@ const isAuthenticated = (): boolean => {
 
 // Protected Route Wrapper
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  return isAuthenticated() ? children : <Navigate to="/login" replace />;
+  return isAuthenticated() ? children : <Navigate to="/landing" replace />;
 };
 
 const AppRoutes: React.FC = () => {
@@ -22,8 +24,8 @@ const AppRoutes: React.FC = () => {
     <BrowserRouter>
       <Routes>
         {/* Public Route */}
+        <Route index path="/landing" element={<LandingPage/>} />
         <Route path="/login" element={<Login />} />
-
         {/* Protected Routes Wrapped in Layout */}
         <Route
           path="/"

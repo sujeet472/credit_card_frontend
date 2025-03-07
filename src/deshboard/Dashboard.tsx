@@ -16,13 +16,13 @@ const Dashboard: React.FC = () => {
             </div> */}
 
 
-            <div className="flex flex-wrap items-center justify-between gap-4 p-6">
+            {/* <div className="flex flex-wrap items-center justify-between gap-4 p-6">
                 <InfoCard data="Balance" className="flex-1 min-w-[250px]" />
                 <InfoCard data="Transaction" className="flex-1 min-w-[250px]" />
                 <div className="flex-1 flex justify-center">
                     <CreditCard />
                 </div>
-            </div>
+            </div> */}
 
 
             <div className="p-6 bg-gray-50 rounded-lg shadow">

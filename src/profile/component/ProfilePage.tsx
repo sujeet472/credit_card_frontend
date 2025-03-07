@@ -16,7 +16,7 @@ const ProfilePage = () => {
 
       <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Branch ID</label>
+            <label className="block text-sm font-medium text-gray-700">Profile ID</label>
             <p className="mt-1 p-2 bg-gray-100 rounded">{profile.id} </p>
           </div>
       

@@ -38,18 +38,32 @@ export default function NewUserCardData() {
     );
   }
 
+  function typeofcard(card: UserCard) {
+    if (card.credit_card_id === "CC001") {
+      return "Platinum";
+    } else if (card.credit_card_id === "CC002") {
+      return "Gold";
+    } else {
+      return "Unknown";
+    }
+  }
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4 flex items-center">
         <CreditCard className="mr-2" /> My Credit Cards
       </h1>
-      
+
       {data?.user_cards && data.user_cards.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {data.user_cards.map((card: UserCard) => (
             <Card key={card.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Card Type - {card.credit_card_id}</CardTitle>
+                {/* <CardTitle className="text-sm font-medium">Card Type - typeofcard({card.credit_card_id})</CardTitle> */}
+                <CardTitle className="text-sm font-medium">
+                  Card Type - {typeofcard(card)} ({card.credit_card_id})
+                </CardTitle>
+
                 {card.is_active ? (
                   <Badge variant="outline" className="bg-green-100 text-green-800">
                     <CheckCircle2 className="mr-1" size={16} /> Active
@@ -62,10 +76,10 @@ export default function NewUserCardData() {
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold text-primary">
-                ₹ {parseFloat(card.available_limit).toLocaleString()}
+                  ₹ {parseFloat(card.available_limit).toLocaleString()}
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">Available Limit</p>
-                
+
                 <div className="mt-4 space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Issue Date:</span>

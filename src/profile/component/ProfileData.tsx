@@ -13,7 +13,7 @@ const ProfileFetcher = () => {
     }
   }, [profile, isSuccess, dispatch]);
 
-  return null; // This component doesn't render anything, just fetches data
+  return null;
 };
 
 export default ProfileFetcher;
