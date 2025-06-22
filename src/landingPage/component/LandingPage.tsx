@@ -3,7 +3,7 @@ import FAQ from "./FAQ";
 const LandingPage = () => {
   return (
     <div className="text-gray-800">
-      {/* Navbar */}
+      
       <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           <h1 className="text-2xl font-bold text-blue-600">Dew's Bank of India</h1>
@@ -22,7 +22,7 @@ const LandingPage = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+     
       <section className="h-screen flex flex-col justify-center items-center bg-blue-50 text-center">
         <h2 className="text-4xl font-bold text-blue-600">
           Welcome to Our Website
@@ -38,19 +38,19 @@ const LandingPage = () => {
         </a>
       </section>
 
-      {/* About Section */}
+    
       <section
         id="about"
         className="bg-gray-900 text-white py-16 px-6 md:px-12"
       >
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-          {/* Left Section - Text */}
+         
           <div className="md:w-1/2 text-center md:text-left">
             <h2 className="text-4xl font-bold text-blue-500 mb-4">About Us</h2>
             <p className="text-gray-300 text-lg leading-relaxed">
               We are a passionate team dedicated to providing top-notch
               solutions that enhance user experiences and drive innovation. Our
-              mission is to deliver quality products and services that make a
+              mission is to deliver quality services that make a
               difference.
             </p>
             <div className="mt-6 space-y-3">
@@ -66,7 +66,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* Right Section - Image */}
+         
           <div className="md:w-1/2">
             <img
               src="https://images.unsplash.com/photo-1498758536662-35b82cd15e29?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHRlYW13b3JrJTIwb2ZmaWNlJTIwNTAwKjM1MHxlbnwwfHwwfHx8MA%3D%3D"
@@ -77,12 +77,12 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+     
       <section id="services" className=" py-20 bg-gray-100">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-blue-600">Our Services</h2>
           <div className="mt-6 grid md:grid-cols-3 gap-8 px-6">
-            {["Credit Card", "Transactions", "Expence Track"].map(
+            {["Credit Card", "Transactions", "Expence Track", "Bank Stock Invest"].map(
               (service) => (
                 <div
                   key={service}
